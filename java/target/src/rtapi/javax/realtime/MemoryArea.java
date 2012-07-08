@@ -45,11 +45,11 @@ public abstract class MemoryArea implements AllocationContext {
 	MemoryArea() {/* ... */
 	}
 
-	@SCJAllowed
+	/*@SCJAllowed
 	@SCJRestricted(maySelfSuspend = false)
 	public static MemoryArea getMemoryArea(Object object) {
 		return null;
-	}
+	}*/
 
 	/**
 	 * TBD: This method has no object argument, so this commentary is not
@@ -65,13 +65,13 @@ public abstract class MemoryArea implements AllocationContext {
 	 *            is the runnable to execute in the memory area containing
 	 *            <code>object</code>.
 	 */
-	@Override
+	/*@Override
 	@Allocate(sameAreaAs = { "object" })
 	@MemoryAreaEncloses(inner = { "logic" }, outer = { "this" })
 	@SCJAllowed
 	@SCJRestricted(maySelfSuspend = false)
 	public void executeInArea(Runnable logic) throws InaccessibleAreaException {
-	}
+	}*/
 
 	/**
 	 * TBD: this method has no object argument, so this commentary is not
@@ -140,12 +140,12 @@ public abstract class MemoryArea implements AllocationContext {
 	 * @return a new array of element type <code>type</code> with size
 	 *         <code>size</code>.
 	 */
-	@Allocate(sameAreaAs = { "object" })
+	/*@Allocate(sameAreaAs = { "object" })
 	@SCJAllowed
 	@SCJRestricted(maySelfSuspend = false)
 	public Object newArrayInArea(Object object, Class type, int size) {
 		return getMemoryArea(object).newArray(type, size);
-	}
+	}*/
 
 	@Override
 	@SCJAllowed
