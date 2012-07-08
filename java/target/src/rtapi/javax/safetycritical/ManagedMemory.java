@@ -26,7 +26,8 @@ public abstract class ManagedMemory extends LTMemory {
 	 */
 	@SCJAllowed
 	public static ManagedMemory getCurrentManagedMemory() {
-		return null;
+		ImplManagedMemory m = new ImplManagedMemory(Memory.getCurrentMemory());
+		return (ManagedMemory)m;
 	}
 
 	/**
